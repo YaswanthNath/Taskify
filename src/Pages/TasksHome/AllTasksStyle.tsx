@@ -10,11 +10,9 @@ export const ThreeDotsParent = styled.div`
     position:relative; 
 `;
 export const ThreeDotsChild = styled.div`
-    width:20px;
-    height:20px;
     position:absolute;
-    top:0px;
-    right:20%;   
+    top:10px;
+    right:10%;   
 `;
 export const NavBar = styled.div`
     display: flex;
@@ -38,6 +36,15 @@ export const AddNew = styled.button`
         cursor: pointer;
       }
       border:none;
+`;
+export const ComButton = styled.button`
+    width:100px;
+    height:30px;    
+    background:#808080;
+    color:white;
+    border:none;
+    border-radius:7px;
+    font-size:15px;
 `;
 export const CardDiv = styled.div`
     display:flex;
@@ -84,7 +91,7 @@ export const ErrorText = styled.p`
     color:red;
     margin:3px auto 15px 0px;
 `;
-export const CompletedTick=styled.img`
+export const CompletedTick = styled.img`
     height:40px;
     width:40px;
 `;

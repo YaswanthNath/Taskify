@@ -10,7 +10,7 @@ function LoginForm() {
   const navigate = useNavigate();
 
   const onSubmit: any = (data: any) => {
-    if (data.email == 'yas@gmail.com' && data.password == 'yas') {
+    if (data.email == 'yas@gmail.com' && data.password == 'yas@14') {
       navigate('/home');
     }
   }
@@ -23,13 +23,17 @@ function LoginForm() {
           <Label>Login to your account</Label>
           <InputDiv>
             <IconInput src={Envelope}></IconInput>
-            <Input {...register('email', { required: true, pattern: { value: /^\S+@\S+\.\S+$/, message: 'Email is wrong' } })} placeholder='Email' />
-            {errors.email && errors.email.type === "required" && (<ErrorText>Email is required</ErrorText>)}
-            {errors.email && errors.email.type === "pattern" && (<ErrorText>Invalid Email</ErrorText>)}
+            <Input {...register('email', { required: true, pattern: { value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, message: 'Email is wrong' } })} placeholder='Email' />
+            {errors.email && errors.email.type === "required" && (<ErrorText >Email is required</ErrorText>)}
+            {errors.email && errors.email.type === "pattern" && (<ErrorText data-testid='email-error'>Invalid Email</ErrorText>)}
           </InputDiv>
           <InputDiv>
             <IconInput src={Password}></IconInput>
-            <Input {...register('password', { required: true, minLength: { value: 3, message: 'Minimum length' }, maxLength: { value: 8, message: 'Minimum length' } })} type='password' placeholder='Password' />
+            <Input {...register('password', {
+              required: true, pattern: {
+                value: /^[a-zA-Z]+[a-zA-Z0-9]*@[0-9]+$/, message: 'this is invalid password'
+              }, minLength: { value: 3, message: 'Minimum length' }, maxLength: { value: 8, message: 'Minimum length' }
+            })} type='password' placeholder='Password' />
             {errors.password && errors.password.type === "required" && (<ErrorText>Password is required</ErrorText>)}
             {errors.password && errors.password.type === "pattern" && (<ErrorText>Invalid password</ErrorText>)}
             {errors.password && errors.password.type === "minLength" && (<ErrorText>Password minimum Length is 3</ErrorText>)}
@@ -39,7 +43,7 @@ function LoginForm() {
           <ResetB type="reset">Reset</ResetB>
         </form>
       </Form>
-      <ForgotPassL><Link to="/forgot">Forgot Password?</Link></ForgotPassL>
+
     </Container>
   )
 }
