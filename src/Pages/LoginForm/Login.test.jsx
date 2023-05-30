@@ -18,7 +18,6 @@ const renderPage = () => {
   )
 }
 
-
 test('renders learn react link', () => {
     // 1)rendering the component that we want to test
     render(<App />);
@@ -53,18 +52,6 @@ test('renders learn react link', () => {
     expect(signinCheck).toHaveAttribute('type', 'submit');
   });
   
-  // test('check display of error message for invalid email', async () => {
-  //   renderPage();
-  
-  //   const emailInput = screen.getByPlaceholderText("Email");
-  //   userEvent.type(emailInput, "invalid-email");
-  
-  //   await waitFor(() => {
-  //     const emailError = screen.getByTestId("email-error");
-  //     expect(emailError).toHaveTextContent("Invalid email");
-  //   });
-  // });
-  
   test('Should be able to type email', () => {
     renderPage();
   
@@ -72,12 +59,14 @@ test('renders learn react link', () => {
     userEvent.type(emailInput, 'yas@gmail.com');
     expect(emailInput).toHaveValue('yas@gmail.com');
   });
+
   test('Should be ablw to type password', () => {
     renderPage();
     const passwordInput = screen.getByPlaceholderText('Password');
     userEvent.type(passwordInput, 'yas@14');
     expect(passwordInput).toHaveValue('yas@14');
   });
+
   test("displays error for invalid email format", async () => {
     renderPage();
     const emailInput = screen.getByPlaceholderText("Email");
@@ -102,3 +91,14 @@ test('renders learn react link', () => {
       expect(passErrorMesAgain).toBeInTheDocument();
     })
   });
+
+  // test('check whether the reset button is working or not', async()=> {
+  //   const resetButton=screen.getByRole('button',{name:'Reset'});
+  //   userEvent.click(resetButton);
+  //   await waitFor(()=>{
+  //     const isEmailNull=screen.queryByPlaceholderText(/Email/i);
+  //     const isPasswordNull=screen.queryByPlaceholderText(/Password/i);
+  //     expect(isEmailNull).toHaveValue('');
+  //     expect(isPasswordNull).toHaveValue('');
+  //   })
+  // })

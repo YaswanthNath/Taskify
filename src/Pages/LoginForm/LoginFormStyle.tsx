@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import Envelope from '../Assests/Envelope.svg'
 
 export const Container = styled.div`
-    
 `;
 export const BackgroundImage = styled.img`
     width:100%;
@@ -22,7 +21,7 @@ export const Head = styled.div`
 
 export const HeadText = styled.p`
     font-size:40px;
-    font-weight:600;
+    font-weight:400;
     color:white;
     text-align:center;
 `;
@@ -41,12 +40,12 @@ export const Form = styled.div`
     margin-top:80px;
     position:absolute;
     z-index:2;
-    right:10%;
+    right:7%;
     top:0;
 `;
 export const Label = styled.span`
     text-align:left;
-    padding-left:32px;
+    padding-left:23px;
     display:flex;
     margin-top:25px;
     margin-bottom:10px;

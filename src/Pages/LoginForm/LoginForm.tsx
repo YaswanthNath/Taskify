@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Container, ErrorText, ForgotPassL, Form, Head, HeadText, BackgroundImage, IconInput, Input, InputDiv, Label, LogoIcon, ResetB, SubmitB } from './LoginFormStyle'
+import { Container, ErrorText, Form,  HeadText, BackgroundImage, IconInput, Input, InputDiv, Label,  ResetB, SubmitB } from './LoginFormStyle'
 import Envelope from '../../Assets/Envelope.svg';
 import Password from '../../Assets/Password.svg';
 import Loginbackground from '../../Assets/Loginbackground.jpg';
